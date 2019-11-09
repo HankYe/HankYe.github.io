@@ -1,7 +1,433 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Hancheng Ye – Personal Profile</title>
+	<meta name="author" content="Hancheng Ye" />
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css" />
+	<link rel="stylesheet" href="ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/main.js?version=1.0.0"></script>
+	<script src="js/jquery.scrollex.min.js"></script>
+	<script src="js/scroll.js"></script>
+	<script>document.documentElement.className = 'js';</script>
+</head>
+<body class="webgl-bg loading">
+	<div class="hider">
+		<div class="hider-layer1">
+		</div>
+	</div>
+	<canvas id="webgl"></canvas>
+	<header class="primary-nav">
+		<div class="nav-container">
+			<nav class="menu-nav">
+				<ul>
+					<li><a href="#top"><span>Hi</span></a></li>
+					<li><a href="#about"><span>About</span></a></li>
+					<li><a href="#works"><span>Works</span></a></li>
+					<li><a href="#articles"><span>Articles</span></a></li>
+					<li><a href="#getintouch"><span>Get in touch</span></a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="logo-container">
+			<div class="menu-icon-container" data-click-state="1">
+				<span class="menu-icon"></span>
+			</div>
+			<a href="#top" title="Philippe Hong" class="logo">
+				<svg width="48px" height="36px" viewBox="0 0 48 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<g id="PH-Logo" transform="translate(-696.000000, -79.000000)" fill="#FFFFFF">
+							<g id="Logo-inner" transform="translate(696.000000, 79.000000)">
+									<path d="M42.131831,5.51333333 C41.5664759,5.50781003 41.0035142,5.58647399 40.4619718,5.74666667 C40.6981719,6.64289169 40.6981719,7.58377497 40.4619718,8.48 L39.3126761,11.58 C38.9408451,12.5333333 38.6366197,13.2933333 38.6366197,13.2933333 L36.216338,19.8133333 L36.216338,19.8133333 L35.2428169,22.44 C35.1275168,22.6990964 35.0325891,22.9665513 34.9588732,23.24 C34.8333791,23.6322419 34.7739988,24.0421308 34.7830986,24.4533333 C34.7830986,24.4933333 34.7830986,24.5266667 34.7830986,24.5666667 C34.7771753,26.321931 35.6141288,27.9763737 37.039723,29.0274348 C38.4653172,30.0784959 40.3112899,30.4021194 42.0169014,29.9 C41.7807013,29.003775 41.7807013,28.0628917 42.0169014,27.1666667 L43.1661972,24.0666667 C43.5380282,23.1133333 43.8422535,22.3533333 43.8422535,22.3533333 L46.2625352,15.8333333 L46.2625352,15.8333333 L47.2360563,13.2066667 C47.3513316,12.9475606 47.4462586,12.6801077 47.52,12.4066667 C47.6454942,12.0144248 47.7048745,11.6045359 47.6957746,11.1933333 C47.6957746,11.1533333 47.6957746,11.12 47.6957746,11.08 C47.7108024,8.03066214 45.2240108,5.54265351 42.131831,5.51333333 L42.131831,5.51333333 Z" id="Shape"></path>
+									<path d="M33.3566197,6.12386186e-16 C32.7928428,-0.000531710477 32.2321961,0.0826220247 31.6935211,0.246666667 C31.9833205,1.31962002 31.9361735,2.45402984 31.5583099,3.5 C30.9633803,5.13333333 25.6901408,19.6333333 25.6901408,19.6333333 L24.6760563,22.4133333 C24.5335422,22.7223465 24.4203821,23.0437213 24.3380282,23.3733333 C24.3380282,23.4133333 24.3380282,23.4533333 24.3380282,23.5 C24.2937637,23.6576761 24.2598902,23.8180109 24.2366197,23.98 L24.2366197,23.98 C24.2206854,24.1774657 24.2206854,24.3758676 24.2366197,24.5733333 C24.2366197,24.6066667 24.2366197,24.6466667 24.2366197,24.68 C24.2362509,26.4297738 25.0731919,28.0771275 26.4946411,29.1244702 C27.9160902,30.1718129 29.755364,30.4963301 31.4569014,30 C31.2268869,29.1522978 31.2106401,28.2619806 31.4095775,27.4066667 L34.6952113,18.3266667 L34.6952113,18.3266667 L38.4676056,7.82666667 C38.6101198,7.51765348 38.7232799,7.1962787 38.8056338,6.86666667 C38.9265514,6.47367423 38.9813618,6.06380166 38.9678873,5.65333333 C38.9678873,5.61333333 38.9678873,5.58 38.9678873,5.54 C38.9678896,2.48294409 36.4567305,0.00367876764 33.3566197,6.12386186e-16 Z" id="Shape"></path>
+									<path d="M6.29408451,35.6733333 C6.85786143,35.673865 7.41850816,35.5907113 7.9571831,35.4266667 C7.66738369,34.3537133 7.71453072,33.2193035 8.09239437,32.1733333 C8.68056338,30.54 13.9605634,16.04 13.9605634,16.04 L14.9746479,13.26 C15.117162,12.9509868 15.2303222,12.629612 15.3126761,12.3 C15.3126761,12.26 15.3126761,12.22 15.3126761,12.1733333 C15.3569405,12.0156572 15.390814,11.8553224 15.4140845,11.6933333 L15.4140845,11.6933333 C15.4300188,11.4958676 15.4300188,11.2974657 15.4140845,11.1 C15.4140845,11.0666667 15.4140845,11.0266667 15.4140845,10.9933333 C15.4101944,9.24590699 14.5714747,7.60245802 13.1506544,6.55820243 C11.7298341,5.51394684 9.89306025,5.19099706 8.19380282,5.68666667 C8.42381737,6.5343689 8.44006415,7.42468605 8.24112676,8.28 L4.96225352,17.3333333 L4.96225352,17.3333333 L1.18309859,27.8466667 C1.04058446,28.1556799 0.927424326,28.4770546 0.845070423,28.8066667 C0.724045576,29.1928986 0.666974928,29.5958491 0.676056338,30 C0.676056338,30.04 0.676056338,30.0733333 0.676056338,30.1133333 C0.670664589,31.5860949 1.26018119,33.000359 2.3143508,34.0436402 C3.36852042,35.0869214 4.8005701,35.6733429 6.29408451,35.6733333 L6.29408451,35.6733333 Z" id="Shape"></path>
+									<path d="M20.5250704,5.44 C19.9612935,5.43946829 19.4006468,5.52262202 18.8619718,5.68666667 C19.1517712,6.75962002 19.1046242,7.89402984 18.7267606,8.94 C18.503662,9.54666667 18.2264789,10.2733333 17.9628169,11.0066667 L17.9628169,11.0066667 L14.1498592,21.5733333 C14.1498592,21.5733333 13.0140845,25.0466667 12.9802817,25.1466667 C12.6016144,26.1908134 11.9109899,27.0973072 10.9994366,27.7466667 C11.9843886,29.2153009 13.6179584,30.135546 15.4011391,30.2262944 C17.1843198,30.3170428 18.9052771,29.5675139 20.0383099,28.2066667 L20.1059155,28.12 C20.3878714,27.8124589 20.6163058,27.4610506 20.7819718,27.08 C20.9310371,26.7738281 21.0509873,26.4546838 21.1402817,26.1266667 L22.0191549,23.46 L22.0191549,23.46 L25.6698592,13.26 C25.8123733,12.9509868 25.9255334,12.629612 26.0078873,12.3 C26.1288049,11.9070076 26.1836153,11.497135 26.1701408,11.0866667 C26.1701408,11.0466667 26.1701408,11.0133333 26.1701408,10.9733333 C26.1683609,9.50055767 25.5719598,8.08909643 24.5127151,7.05081807 C23.4534703,6.01253971 22.0185732,5.43290978 20.5250704,5.44 Z" id="Shape"></path>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</a>
+			<nav class="main-nav-full">
+				<ul>
+					<li><a href="#top" data-letters="Hi">Hi</a></li>
+					<li><a href="#about" data-letters="About">About</a></li>
+					<li><a href="#works" data-letters="Works">Works</a></li>
+					<li><a href="#articles" data-letters="Articles">Articles</a></li>
+					<li><a href="#getintouch" data-letters="Get in touch">Get in touch</a></li>
+				</ul>
+			</nav>
+		</div>
+
+	</header>
+
+
+	<main class="main" id="top">
+		<div class="dark-bg">
+		</div>
+		<header class="content content-header">
+			<div class="logo-2">
+				<a href="#top" title="Philippe Hong" class="logo">
+					<svg width="48px" height="36px" viewBox="0 0 48 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="PH-Logo" transform="translate(-696.000000, -79.000000)" fill="#FFFFFF">
+								<g id="Logo-inner" transform="translate(696.000000, 79.000000)">
+										<path d="M42.131831,5.51333333 C41.5664759,5.50781003 41.0035142,5.58647399 40.4619718,5.74666667 C40.6981719,6.64289169 40.6981719,7.58377497 40.4619718,8.48 L39.3126761,11.58 C38.9408451,12.5333333 38.6366197,13.2933333 38.6366197,13.2933333 L36.216338,19.8133333 L36.216338,19.8133333 L35.2428169,22.44 C35.1275168,22.6990964 35.0325891,22.9665513 34.9588732,23.24 C34.8333791,23.6322419 34.7739988,24.0421308 34.7830986,24.4533333 C34.7830986,24.4933333 34.7830986,24.5266667 34.7830986,24.5666667 C34.7771753,26.321931 35.6141288,27.9763737 37.039723,29.0274348 C38.4653172,30.0784959 40.3112899,30.4021194 42.0169014,29.9 C41.7807013,29.003775 41.7807013,28.0628917 42.0169014,27.1666667 L43.1661972,24.0666667 C43.5380282,23.1133333 43.8422535,22.3533333 43.8422535,22.3533333 L46.2625352,15.8333333 L46.2625352,15.8333333 L47.2360563,13.2066667 C47.3513316,12.9475606 47.4462586,12.6801077 47.52,12.4066667 C47.6454942,12.0144248 47.7048745,11.6045359 47.6957746,11.1933333 C47.6957746,11.1533333 47.6957746,11.12 47.6957746,11.08 C47.7108024,8.03066214 45.2240108,5.54265351 42.131831,5.51333333 L42.131831,5.51333333 Z" id="Shape"></path>
+										<path d="M33.3566197,6.12386186e-16 C32.7928428,-0.000531710477 32.2321961,0.0826220247 31.6935211,0.246666667 C31.9833205,1.31962002 31.9361735,2.45402984 31.5583099,3.5 C30.9633803,5.13333333 25.6901408,19.6333333 25.6901408,19.6333333 L24.6760563,22.4133333 C24.5335422,22.7223465 24.4203821,23.0437213 24.3380282,23.3733333 C24.3380282,23.4133333 24.3380282,23.4533333 24.3380282,23.5 C24.2937637,23.6576761 24.2598902,23.8180109 24.2366197,23.98 L24.2366197,23.98 C24.2206854,24.1774657 24.2206854,24.3758676 24.2366197,24.5733333 C24.2366197,24.6066667 24.2366197,24.6466667 24.2366197,24.68 C24.2362509,26.4297738 25.0731919,28.0771275 26.4946411,29.1244702 C27.9160902,30.1718129 29.755364,30.4963301 31.4569014,30 C31.2268869,29.1522978 31.2106401,28.2619806 31.4095775,27.4066667 L34.6952113,18.3266667 L34.6952113,18.3266667 L38.4676056,7.82666667 C38.6101198,7.51765348 38.7232799,7.1962787 38.8056338,6.86666667 C38.9265514,6.47367423 38.9813618,6.06380166 38.9678873,5.65333333 C38.9678873,5.61333333 38.9678873,5.58 38.9678873,5.54 C38.9678896,2.48294409 36.4567305,0.00367876764 33.3566197,6.12386186e-16 Z" id="Shape"></path>
+										<path d="M6.29408451,35.6733333 C6.85786143,35.673865 7.41850816,35.5907113 7.9571831,35.4266667 C7.66738369,34.3537133 7.71453072,33.2193035 8.09239437,32.1733333 C8.68056338,30.54 13.9605634,16.04 13.9605634,16.04 L14.9746479,13.26 C15.117162,12.9509868 15.2303222,12.629612 15.3126761,12.3 C15.3126761,12.26 15.3126761,12.22 15.3126761,12.1733333 C15.3569405,12.0156572 15.390814,11.8553224 15.4140845,11.6933333 L15.4140845,11.6933333 C15.4300188,11.4958676 15.4300188,11.2974657 15.4140845,11.1 C15.4140845,11.0666667 15.4140845,11.0266667 15.4140845,10.9933333 C15.4101944,9.24590699 14.5714747,7.60245802 13.1506544,6.55820243 C11.7298341,5.51394684 9.89306025,5.19099706 8.19380282,5.68666667 C8.42381737,6.5343689 8.44006415,7.42468605 8.24112676,8.28 L4.96225352,17.3333333 L4.96225352,17.3333333 L1.18309859,27.8466667 C1.04058446,28.1556799 0.927424326,28.4770546 0.845070423,28.8066667 C0.724045576,29.1928986 0.666974928,29.5958491 0.676056338,30 C0.676056338,30.04 0.676056338,30.0733333 0.676056338,30.1133333 C0.670664589,31.5860949 1.26018119,33.000359 2.3143508,34.0436402 C3.36852042,35.0869214 4.8005701,35.6733429 6.29408451,35.6733333 L6.29408451,35.6733333 Z" id="Shape"></path>
+										<path d="M20.5250704,5.44 C19.9612935,5.43946829 19.4006468,5.52262202 18.8619718,5.68666667 C19.1517712,6.75962002 19.1046242,7.89402984 18.7267606,8.94 C18.503662,9.54666667 18.2264789,10.2733333 17.9628169,11.0066667 L17.9628169,11.0066667 L14.1498592,21.5733333 C14.1498592,21.5733333 13.0140845,25.0466667 12.9802817,25.1466667 C12.6016144,26.1908134 11.9109899,27.0973072 10.9994366,27.7466667 C11.9843886,29.2153009 13.6179584,30.135546 15.4011391,30.2262944 C17.1843198,30.3170428 18.9052771,29.5675139 20.0383099,28.2066667 L20.1059155,28.12 C20.3878714,27.8124589 20.6163058,27.4610506 20.7819718,27.08 C20.9310371,26.7738281 21.0509873,26.4546838 21.1402817,26.1266667 L22.0191549,23.46 L22.0191549,23.46 L25.6698592,13.26 C25.8123733,12.9509868 25.9255334,12.629612 26.0078873,12.3 C26.1288049,11.9070076 26.1836153,11.497135 26.1701408,11.0866667 C26.1701408,11.0466667 26.1701408,11.0133333 26.1701408,10.9733333 C26.1683609,9.50055767 25.5719598,8.08909643 24.5127151,7.05081807 C23.4534703,6.01253971 22.0185732,5.43290978 20.5250704,5.44 Z" id="Shape"></path>
+								</g>
+							</g>
+						</g>
+					</svg>
+				</a>
+			</div>
+			<div class="content-top">
+				<div class="content-top-container">
+					<h1 class="block">Philippe Hong</h1>
+					<h4 class="block">Award winning UI/UX Designer based in Sydney</h4>
+				</div>
+			</div>
+		</header>
+		<section class="content content-main">
+
+			<!-- SECTION ABOUT -->
+			<div class="content-section content-about" id="about">
+				<div class="container mt-5 pt-5">
+					<div class="row">
+						<div class="col-xs-12 col-md-8">
+							<h3 class="quote-animation">
+								<span class="animText animText-1 ">“The </span>
+								<span class="animText animText-2">future </span>
+								<span class="animText animText-3">belongs </span>
+								<span class="animText animText-4">to </span>
+								<span class="animText animText-5">those </span>
+								<span class="animText animText-6">who </span>
+								<span class="animText animText-7">learn </span>
+								<span class="animText animText-8">more </span>
+								<span class="animText animText-9">skills </span>
+								<span class="animText animText-10">and </span>
+								<span class="animText animText-11">combine </span>
+								<span class="animText animText-12">them </span>
+								<span class="animText animText-13">in </span>
+								<span class="animText animText-14"><b class="creative line-through"><em>creative</em></b></span>
+								<span class="animText animText-15"> ways”</span></h3>
+							<p class="quote-author">— Robert Green, Mastery</p>
+						</div>
+					</div>
+					<div class="row mt-5 pt-5 about-text">
+						<div class="col-md-4">
+							<p>French award-winning designer currently living in Sydney, AU. Designer and self-taught UX, Front-end developer, I’m a creative person who's passionate about making the best possible experience for people. I'm also Judge @ CSSDA</p>
+						</div>
+						<div class="col-md-4">
+							<p>With 6 years of experience in design, I won a few awards like
+								<ul>
+									<li>2 #WOTD at CSSDesignAwards in 2015 & 2012</li>
+									<li>2 CSSAwards Featured in 2015 & 2012</li>
+									<li>2 Honorables Mentions at Awwwards</li>
+									<li>#WOTD at CSSWinner</li>
+									<li>Bemyapp Games WorldCup</li>
+									<li>Dailymotion Best Mobile Application</li>
+									<li>France National's 1st Prize of BeMyApp WorldCup</li>
+									<li>Winner #101projets and 1st Prize off Pernod-Ricard BreakTheCode.</li>
+								</ul>
+						</div>
+						<div class="col-md-4">
+							<p>I had the privilege to work with huge brands like Airtasker, Snappr,  L'Oreal, Nespresso, Michelin, Schneider Electrics, Badoit, Laposte Mobile, Sanofi, Celio, Intel, Credit Agricole, Hana, Lyxumia and many others...</p>
+							<p>Currently leading the design at <a href="http://keypay.com.au" target="_blank">KeyPay</a>. Always looking for new interaction. <br><a href="#getintouch">Hit</a> me up if you want to chat!</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END SECTION ABOUT -->
+			<!-- SECTION WORKS -->
+			<div class="content-section content-works" id="works">
+				<div class="container">
+					<h1 class="with-line1">Works </h1>
+					<p style="">Case studies coming soon</p>
+					<div class="content-works-inner mt-md-5 pt-md-5 animation ">
+						<div class="row">
+							<div class="col-xs-12 col-md-12 project project-keypay">
+								<a href="http://keypay.com.au" target="_blank">
+									<picture class="img-fluid">
+										<source class="img-fluid" media="(max-width: 768px)" sizes=""
+										srcset="img/mobile/PH-KeyPay.jpg 138w, stick-figure-hd-narrow.png 138w">
+										<img src="img/PH-KeyPay.jpg" alt="" class="img-fluid">
+									</picture>
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-9 project project-snappr">
+								<a href="http://snappr.co" target="_blank">
+									<picture class="img-fluid">
+										<source class="img-fluid" media="(max-width: 768px)" sizes=""
+										srcset="img/mobile/PH-Snappr.jpg 138w, stick-figure-hd-narrow.png 138w">
+										<img src="img/PH-Snappr.jpg" alt="" class="img-fluid">
+									</picture>
+								</a>
+							</div>
+							<div class="col-xs-12 col-md-3 project project-airtasker">
+								<a href="http://airtasker.com" target="_blank">
+									<picture class="img-fluid">
+										<source class="img-fluid" media="(max-width: 768px)" sizes=""
+										srcset="img/mobile/PH-Airtasker.jpg 138w, stick-figure-hd-narrow.png 138w">
+
+										<img src="img/PH-Airtasker.jpg" alt="" class="img-fluid">
+									</picture>
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-6 project project-vyte">
+								<a href="http://vyte.in" target="_blank">
+									<picture class="img-fluid">
+										<source class="img-fluid" media="(max-width: 768px)" sizes=""
+										srcset="img/mobile/PH-Vyte.jpg 138w, stick-figure-hd-narrow.png 138w">
+
+										<img src="img//PH-Vyte.jpg" alt="" class="img-fluid">
+									</picture>
+								</a>
+							</div>
+							<div class="col-xs-12 col-md-6 project project-bukket">
+								<a href="http://bukketapp.com" target="_blank">
+									<picture class="img-fluid">
+										<source class="img-fluid" media="(max-width: 768px)" sizes=""
+										srcset="img/mobile/PH-Bukket.jpg 138w, stick-figure-hd-narrow.png 138w">
+
+										<img src="img/PH-Bukket.jpg" alt="" class="img-fluid">
+									</picture>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END SECTION WORKS -->
+			<!-- SECTION ARTICLES -->
+			<div class="content-section content-articles" id="articles">
+				<div class="container">
+					<div class="content-articles-inner mt-5">
+						<div class="row">
+							<div class="col-md-6 section-articles">
+								<h2 class="with-line2">Writings</h2>
+								<div class="articles-container mt-5">
+									<div class="article mt-3">
+										<a href="#getintouch" class="anim-link">
+											<h5>Practical Web Design</h5>
+											<p class="mt-2">Currently writing (subscribe to receive it)</p>
+										</a>
+									</div>
+									<div class="article mt-3">
+										<a href="https://blog.usejournal.com/30-days-deep-into-figma-full-review-7fffbb237c27" target="_blank" class="anim-link">
+											<h5>30 days deep in Figma - Full review</h5>
+											<p class="mt-2">Nov 13, 2017</p>
+										</a>
+									</div>
+									<div class="article mt-3">
+										<a href="https://medium.com/@philippehong/sketch-new-features-sketch-libraries-what-is-it-c793a996798b" target="_blank" class="anim-link">
+											<h5>First Impression of Sketch Libraries</h5>
+											<p class="mt-2">Sept 1, 2017</p>
+										</a>
+									</div>
+									<div class="article mt-3 ">
+										<a href="https://medium.com/@philippehong/my-personal-insight-after-working-a-year-remote-as-a-designer-f615c937d261" target="_blank" class="anim-link">
+											<h5>My personal insight after working a year remote as a Designer</h5>
+											<p class="mt-2">Aug 22, 2017</p>
+										</a>
+									</div>
+									<div class="article mt-3 ">
+										<a href="http://uigarage.net/blog-post/how-to-design-for-virtual-reality/" target="_blank" class="anim-link">
+											<h5>How to design for Virtual Reality</h5>
+											<p class="mt-2">Dec 6, 2016</p>
+										</a>
+									</div>
+									<div class="article mt-3 ">
+										<a href="http://uigarage.net/blog-post/kick-start-design-career-10-steps/" target="_blank" class="anim-link">
+											<h5>How to kick-start your design career in 10 steps</h5>
+											<p class="mt-2">Oct 27, 2016</p>
+										</a>
+									</div>
+									<div class="article mt-3 ">
+										<a href="https://medium.com/sketch-app-sources/how-to-recover-50-go-or-even-more-by-deleting-sketch-caches-files-e5829dba20e1" target="_blank" class="anim-link">
+											<h5>How to recover 50 GB or even more by deleting Sketch caches files</h5>
+											<p class="mt-2">Oct 11, 2015</p>
+										</a>
+									</div>
+									<div class="col-xs-12">
+										<a href="https://medium.com/@philippehong" target="_blank" class="button button-primary">Check my Medium</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 text-black section-articles section-interviews">
+								<h2 class="with-line2">Appeared on</h2>
+								<div class="articles-container mt-5">
+									<div class="article">
+										<a href="https://techcrunch.com/2017/05/23/vyte-makes-it-easy-to-invyte-people-to-your-calyndyr/" target="_blank" class="anim-link">
+											<h5>Vyte makes it easy to invyte people to your calyndyr</h5>
+											<p class=" mt-2">Techcrunch</p>
+										</a>
+									</div>
+									<div class="article">
+										<a href="https://techcrunch.com/2014/11/20/with-vyte-in-schedule-meetings-without-long-email-threads/" target="_blank" class="anim-link">
+											<h5>With Vyte.in, Schedule Meetings Without Long Email Threads</h5>
+											<p class=" mt-2">Techcrunch</p>
+										</a>
+									</div>
+									<div class="article">
+										<a href="http://abduzeedo.com/ui-works-phillipe-hong" target="_blank" class="anim-link">
+											<h5>UI Works by Philippe Hong</h5>
+											<p class=" mt-2">Abduzeedo</p>
+										</a>
+									</div>
+									<div class="article ">
+										<a href="http://www.cssdesignawards.com/judge-interview/philippe-hong/170/" target="_blank" class="anim-link">
+											<h5>CSSDA Judges ~ Featured Interview </h5>
+											<p class=" mt-2">CSS Design Awards</p>
+										</a>
+									</div>
+									<div class="article ">
+										<a href="https://blog.prototypr.io/designers-with-amazing-side-projects-a16541ab36bc#.pg7p58k5r" target="_blank" class="anim-link">
+											<h5>Designers with amazing side projects </h5>
+											<p class=" mt-2">Prototypr</p>
+										</a>
+									</div>
+									<div class="article ">
+										<a href="https://blog.zipboard.co/the-design-life-of-a-product-designer-interview-with-philippe-hong-ea07c5fac7ce#.k2h4is7d7" target="_blank" class="anim-link">
+											<h5>Interview with Philippe Hong</h5>
+											<p class=" mt-2">ZipBoard</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END SECTION ARTICLES -->
+		</section>
+		<section class="content-related" id="getintouch">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-6 col-12">
+					</div>
+					<div class="col-md-6 content-getintouch col-12">
+						<h1>Get in touch</h1>
+						<ul class="mt-5 contact-details">
+							<li><a href="http://twitter.com/philippehong" target="_blank"><b>Twitter</b> <span>@philippehong</span></a></li>
+							<li><a href="http://dribbble.com/philippehong" target="_blank"><b>Dribbble</b> <span>/philippehong</span></a></li>
+							<li><a href="http://medium.com/@philippehong" target="_blank"><b>Medium</b> <span>@philippehong</span></a></li>
+							<li><a href="https://www.linkedin.com/in/philippehong/" target="_blank"><b>Linkedin</b> <span>/philippehong</span></a></li>
+							<li><a href="mailto:me@philippehong.com"><b>Email</b> <span>me[@]philippehong.com</span></a></li>
+						</ul>
+						<div class="row newsletter">
+							<div class="col-md-10 col-xs-12 mt-5">
+								<h6><strong>Newsletters</strong></h6>
+								<p class="mt-3">I write about design and a bit of everything, I never spam, receive an email when I ship new stuff. <strong>
+									4545								</strong> early birds so far. </p>
+								<!-- Begin MailChimp Signup Form -->
+								<div id="mc_embed_signup">
+									<form action="//philippehong.us16.list-manage.com/subscribe/post?u=d720858395c320b1227d4a886&amp;id=7270d4d1b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+									    <div id="mc_embed_signup_scroll">
+
+									<div class="mc-field-group">
+										<label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+									</label>
+										<div class="input-group">
+											<input type="email" value="" name="EMAIL" class="required email form-control" class="" id="mce-EMAIL" placeholder="Email Address">
+											<span class="input-group-btn">
+								        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+								      </span>
+								    </div>
+									</div>
+										<div id="mce-responses" class="clear">
+											<div class="response" id="mce-error-response" style="display:none"></div>
+											<div class="response" id="mce-success-response" style="display:none"></div>
+										</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+									    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d720858395c320b1227d4a886_7270d4d1b9" tabindex="-1" value=""></div>
+									    </div>
+									</form>
+								</div>
+
+								<!--End mc_embed_signup-->
+							</div>
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+	</main>
+	<script src="js/regl.min.js"></script>
+
+	<script type="x-shader/x-fragment" id="fragmentShader">
+	#define TWO_PI 6.2831853072
+	#define PI 3.14159265359
+
+	precision highp float;
+
+	uniform float globaltime;
+	uniform vec2 resolution;
+	uniform float aspect;
+	uniform float scroll;
+	uniform float velocity;
+	uniform sampler2D texture;
+
+	const float timescale = 0.1;
+	const float twist = 1.1;
+
+	vec2 rotate(vec2 v, float angle) {
+		float c = cos(angle);
+		float s = sin(angle);
+		return v * mat2(c, -s, s, c);
+	}
+
+	float nsin(float value) {
+		return sin(value * TWO_PI) * 0.2 + 0.5;
+	}
+
+	void main(void) {
+		float time = globaltime * timescale;
+		vec2 center = vec2(sin(TWO_PI * time * 0.2), cos(TWO_PI * time * 0.2)) * nsin(time * 0.1) * 0.5;
+		vec2 tx = (gl_FragCoord.xy / resolution.xy - 0.5 - center) * vec2(aspect, 1.0);
+		float len = 1.0 - length(tx);
+		float zoom = 0.0 + scroll - len * 2.0 * (1.0 - scroll) + len * velocity;
+
+		vec4 imgColor = texture2D(
+			texture,
+			rotate(
+				(tx + center) * vec2(0.5, -1.0) * zoom,
+				twist * TWO_PI * nsin(len + time) * scroll + time
+			) + 0.4
+		);
+
+		gl_FragColor = imgColor;
+	}
+	</script>
+
+	<script src="js/demo.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-26690729-2', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </body>
 </html>
