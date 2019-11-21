@@ -903,7 +903,7 @@ input,button,select,textarea{
 	background:#000
 }
 
-/*page @ the loding process*/
+/*page @ the loading process*/
 .js .loading::after{
 	content:'';
 	position:fixed;
@@ -1015,6 +1015,7 @@ input,button,select,textarea{
 	-webkit-transform:translateX(0px);
 	transform:translateX(0px)
 }
+/*end loading part, start the main pages*/
 .content{
 	display:-webkit-box;
 	display:-ms-flexbox;
@@ -1278,9 +1279,12 @@ input,button,select,textarea{
 	max-width:calc(33.3% - 10px);
 	margin-right:10px
 }
-.content-works .content-works-inner .row .project-bukket{
-	max-width:calc(33.3% - 10px)
+@media screen and (max-width: 767px){
+	.content-works .content-works-inner .row .project-opioid{
+		margin-right:0
+	}
 }
+
 .content-works .content-works-inner .row .project-CP{
 	max-width:calc(33.5% - 10px);
 }
@@ -1455,7 +1459,11 @@ input,button,select,textarea{
 	min-height:800px
 }
 @media screen and (max-width: 767px){
-	.content-related{background-attachment:inherit
+	.content-related{
+		background:url("../img/mobile/fudan.jpg");
+		background-repeat:no-repeat;
+		background-size:cover;
+		background-attachment:inherit
 	}
 }
 @media screen and (max-width: 767px){
@@ -1463,7 +1471,7 @@ input,button,select,textarea{
 		padding:0px 30px
 	}
 }
-.content-related .content-getintouch{
+.content-related .content-contact{
 	display:-webkit-box;
 	display:-moz-box;
 	display:box;
@@ -1479,27 +1487,27 @@ input,button,select,textarea{
 	padding-top:3rem;
 	padding-bottom:3rem
 }
-.content-related .content-getintouch ul{
+.content-related .content-contact ul{
 	padding:0;
 	margin:0
 }
-.content-related .content-getintouch ul li{
+.content-related .content-contact ul li{
 	list-style-type:none;
 	margin-top:5px
 }
-.content-related .content-getintouch ul li a{
+.content-related .content-contact ul li a{
 	font-family:"Playfair Display","Georgia",serif;
 	font-size:30px;
 	letter-spacing:-0.5px;
 	font-weight:bold
 }
 @media screen and (max-width: 767px){
-	.content-related .content-getintouch ul li a{
+	.content-related .content-contact ul li a{
 		font-size:22px;
 		letter-spacing:-0.2px
 	}
 }
-.content-related .content-getintouch ul li a b{
+.content-related .content-contact ul li a b{
 	display:inline-block;
 	position:relative;
 	z-index:2;
@@ -1511,7 +1519,7 @@ input,button,select,textarea{
 	transition-timing-function:cubic-bezier(0.7, 0, 0.3, 1);
 	vertical-align:top
 }
-.content-related .content-getintouch ul li a b:before{
+.content-related .content-contact ul li a b:before{
 	content:'';
 	position:absolute;
 	background:#F8C91C;
@@ -1532,7 +1540,7 @@ input,button,select,textarea{
 	-webkit-transition-timing-function:cubic-bezier(0.2, 1, 0.3, 1);
 	transition-timing-function:cubic-bezier(0.2, 1, 0.3, 1)
 }
-.content-related .content-getintouch ul li a span{
+.content-related .content-contact ul li a span{
 	font-family:"Larsseit","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size:22px;
 	letter-spacing:0px;
@@ -1545,70 +1553,17 @@ input,button,select,textarea{
 	transition-timing-function:cubic-bezier(0.2, 1, 0.3, 1)
 }
 @media screen and (max-width: 767px){
-	.content-related .content-getintouch ul li a span{
+	.content-related .content-contact ul li a span{
 		font-size:17px
 	}
 }
-.content-related .content-getintouch ul li a:hover b{
+.content-related .content-contact ul li a:hover b{
 	color:#F8C91C
 }
-.content-related .content-getintouch ul li a:hover b:before{
+.content-related .content-contact ul li a:hover b:before{
 	-webkit-transform:scale3d(1, 1, 1);
 	transform:scale3d(1, 1, 1)
 }
-.content-related .content-getintouch ul li a:hover span{
+.content-related .content-contact ul li a:hover span{
 	color:#F8C91C
-}
-.content-related .content-getintouch .newsletter p{
-	color:#7A7F85
-}
-.content-related .content-getintouch .newsletter p strong{
-	color:#BFC6CE
-}
-@media screen and (max-width: 767px){
-	.content-related .content-getintouch .newsletter p{
-		font-size:16px;
-		line-height:1.6
-	}
-}
-.content-related .content-getintouch .newsletter .mc-field-group label{
-	text-indent:-9999px
-}
-.content-related .content-getintouch .newsletter .mc-field-group input[type="email"]{
-	padding:24px 30px;
-	font-size:18px;
-	background:transparent;
-	border:2px solid white;
-	-webkit-transition:all 0.2s cubic-bezier(0.7, 0, 0.3, 1);
-	transition:all 0.2s cubic-bezier(0.7, 0, 0.3, 1);
-	border-right:0px;
-	color:white
-}
-@media screen and (max-width: 767px){
-	.content-related .content-getintouch .newsletter .mc-field-group input[type="email"]{
-		font-size:14px;
-		padding:20px 15px
-	}
-}
-.content-related .content-getintouch .newsletter .mc-field-group input[type="email"]:focus{
-	border-color:#F8C91C
-}
-.content-related .content-getintouch .newsletter .mc-field-group .button{
-	border-radius:0px 4px 4px 0px;
-	background:white;
-	color:black;
-	font-weight:bold;
-	font-size:18px;
-	border:0;
-	padding:27px 25px;
-	cursor:pointer
-}
-@media screen and (max-width: 767px){
-	.content-related .content-getintouch .newsletter .mc-field-group .button{
-		font-size:16px;
-		padding:22px 15px
-	}
-}
-.content-related .content-getintouch .newsletter .mc-field-group .button:hover{
-	background:#F8C91C
 }
