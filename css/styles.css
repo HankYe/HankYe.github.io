@@ -52,7 +52,7 @@ h1.with-line1{
 h1.with-line1:after{
 	content:'';
 	position:absolute;
-	background:white;
+	background:currentColor;
 	height:10px;
 	width:180px;
 	left:120%;
@@ -83,7 +83,7 @@ h2.with-line2{
 h2.with-line2:after{
 	content:'';
 	position:absolute;
-	background:white;
+	background:currentColor;
 	height:1px;
 	width:180px;
 	left:20%;
@@ -470,16 +470,38 @@ p.small{
 		transform-origin:center left
 	}
 }
+.kvcomm-container{position:relative;display:block}
+.kvcomm-badge,.kvcomm_badge{position:absolute;top:12px;left:12px;border-radius:8px;padding:6px 10px;font-weight:700;font-size:16px;line-height:1;z-index:2;pointer-events:none}
+/* Below-image caption with GitHub link */
+.kvcomm-caption{margin-top:8px;font-size:16px;line-height:1.4}
+.kvcomm-caption-title{display:block;margin-bottom:4px}
+.kvcomm-caption-text{display:block}
+.kvcomm-nobr{white-space:nowrap}
+.kvcomm-links{display:inline-flex;gap:6px;flex-wrap:nowrap;align-items:baseline;vertical-align:baseline}
+.kvcomm-caption-authors .kvcomm-links{margin-left:6px}
+.kvcomm-caption-link{display:inline-block;border-radius:6px;padding:1px 6px;font-weight:700;font-size:14px;line-height:1;margin-left:6px;border:2px solid transparent}
+html[data-theme='light'] .kvcomm-badge,html[data-theme='light'] .kvcomm_badge{background:#fff;color:#081950;border:2px solid #081950}
+html[data-theme='dark'] .kvcomm-badge,html[data-theme='dark'] .kvcomm_badge{background:#081950;color:#fff;border:2px solid #fff}
+html[data-theme='light'] .kvcomm-caption-link{background:#fff;color:#081950;border-color:#081950}
+html[data-theme='dark'] .kvcomm-caption-link{background:#081950;color:#fff;border-color:#fff}
+@media (max-width: 576px){
+  .kvcomm-badge,.kvcomm_badge{font-size:14px;padding:5px 8px;border-radius:6px}
+  .kvcomm-caption{font-size:14px}
+  .kvcomm-caption-title{margin-bottom:4px}
+  .kvcomm-caption-link{font-size:13px;padding:1px 6px;border-radius:6px}
+}
+@media (max-width: 576px){.kvcomm-badge{font-size:14px;padding:5px 8px;border-radius:6px}}
+/* KVCOMM graphic handled internally; no filter here. */
 .block{
 	display:block
 }
 a{
-	color:white;
+	color:inherit;
 	text-decoration:none
 }
 a:hover{
 	text-decoration:none;
-	color:white
+	color:inherit
 }
 .nav-container{
 	position:absolute;
@@ -516,13 +538,13 @@ a:hover{
 	margin-bottom:4px
 }
 .menu-nav ul li a{
-	color:white;
+	color:inherit;
 	text-decoration:none;
 	cursor:pointer;
 	font-size:16px;
 	font-weight:bold;
 	padding:10px 20px;
-	border-right:2px solid rgba(255,255,255,0.6);
+    	border-right:2px solid rgba(255,255,255,0.6);
 	height:40px;
 	width:140px;
 	display:block;
@@ -531,15 +553,55 @@ a:hover{
 	-webkit-transition:all 0.3s cubic-bezier(0.08, 0.96, 0.4, 0.99);
 	transition:all 0.3s cubic-bezier(0.08, 0.96, 0.4, 0.99)
 }
+
+/* Theme toggle: minimalist switch fixed at top-right */
+.theme-toggle{
+  position:fixed; right:84px; top:16px; z-index:1100;
+  width:48px; height:28px; border-radius:999px;
+  background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.45);
+  -webkit-backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(180%) blur(10px);
+  color:#ffffff; cursor:pointer; padding:0; line-height:0; overflow:hidden; pointer-events:auto;
+}
+.theme-toggle::after{
+  content:""; position:absolute; top:3px; left:3px; width:22px; height:22px;
+  border-radius:50%; background:currentColor; box-shadow:0 2px 6px rgba(0,0,0,0.25);
+  -webkit-transition:transform .2s ease; transition:transform .2s ease;
+}
+.theme-toggle:focus{ outline:none; box-shadow:0 0 0 2px rgba(255,255,255,0.35) inset; }
+@media (prefers-reduced-motion: reduce){ .theme-toggle::after{ -webkit-transition:none; transition:none; } }
+/* Move knob in dark mode */
+html[data-theme='dark'] .theme-toggle{ color:#ffffff; background:rgba(8,25,80,0.18); border-color:rgba(255,255,255,0.35); }
+html[data-theme='dark'] .theme-toggle::after{ transform:translateX(20px); }
+/* Light theme look */
+html[data-theme='light'] .theme-toggle{ color:#081950; background:rgba(255,255,255,0.9); border-color:rgba(8,25,80,0.25); }
+html[data-theme='light'] .theme-toggle::after{ background:#081950; }
+/* Avoid overlap with the hamburger icon on small screens */
+@media (max-width: 767px){ .theme-toggle{ top:14px; right:84px; } }
+
+/* Ensure responsive size for SVG object */
+object.kvcomm-image{ width:100%; height:auto; display:block; aspect-ratio: 2005 / 1246; min-height:180px; }
+
+/* ChartX cover and fallbacks */
+.project-chartx .cover,.project-adiff .cover,.project-ofb .cover{position:relative;display:block;width:100%;overflow:hidden;border-radius:8px}
+/* Show the whole image without cropping */
+.project-chartx .cover img,.project-adiff .cover img,.project-ofb .cover img{width:100%;height:auto;display:block;object-fit:contain}
+/* Fallback text hidden by default; only visible when .cover.error is set */
+.project-chartx .img-fallback,.project-adiff .img-fallback,.project-ofb .img-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:16px;text-align:center;font-weight:700;font-size:18px}
+.project-chartx .cover.error .img-fallback,.project-adiff .cover.error .img-fallback,.project-ofb .cover.error .img-fallback{display:flex}
+html[data-theme='dark']  .project-chartx .cover,html[data-theme='dark']  .project-adiff .cover,html[data-theme='dark']  .project-ofb .cover{background:#0b0f1a;border:1px solid rgba(255,255,255,0.18)}
+html[data-theme='light'] .project-chartx .cover,html[data-theme='light'] .project-adiff .cover,html[data-theme='light'] .project-ofb .cover{background:#f7f9ff;border:1px solid rgba(8,25,80,0.2)}
+.project-chartx .cover.loaded .img-fallback,.project-adiff .cover.loaded .img-fallback,.project-ofb .cover.loaded .img-fallback{display:none}
+.project-chartx .kvcomm-badge{z-index:3}
 .menu-nav ul li a span{
 	opacity:0;
 	display:inline-block
 }
 .menu-nav ul li a.active{
-	border-right:4px solid #fff
+	border-right:4px solid currentColor
 }
 .menu-nav ul li a:hover{
-	border-right:4px solid #fff;
+	border-right:4px solid currentColor;
 	width:auto !important
 }
 .menu-nav ul li a:hover span{
@@ -870,8 +932,51 @@ body{
 	font-weight:normal;
 	-moz-osx-font-smoothing:grayscale;
 	-webkit-font-smoothing:antialiased !important;
-	color:white
+	color:inherit
 }
+
+/* System preference default colors */
+@media (prefers-color-scheme: light){
+  :root{ color-scheme: light dark; }
+  body{ background-color:#ffffff; color:#081950; }
+}
+@media (prefers-color-scheme: dark){
+  :root{ color-scheme: dark light; }
+  body{ background-color:#0b0f1a; color:#ffffff; }
+}
+
+/* Explicit theme overrides via [data-theme] */
+html[data-theme='light'] body{ background-color:#ffffff; color:#081950; }
+html[data-theme='dark']  body{ background-color:#0b0f1a; color:#ffffff; }
+
+/* Adjust overlays for light theme */
+html[data-theme='light'] .main:before{ background:rgba(0,0,0,0.08); }
+html[data-theme='light'] .main.darker:before{ background:rgba(0,0,0,0.12); }
+
+/* Links and menus in light theme */
+html[data-theme='light'] a{ color:#081950; }
+html[data-theme='light'] a:hover{ color:#081950; }
+html[data-theme='light'] .menu-nav ul li a{ color:#081950; border-right-color:rgba(8,25,80,0.6); }
+html[data-theme='light'] .menu-nav ul li a.active{ border-right-color:#081950; }
+html[data-theme='light'] .menu-nav ul li a:hover{ border-right-color:#081950; }
+
+/* Header menu icon color in light theme */
+html[data-theme='light'] .logo-container .menu-icon-container .menu-icon,
+html[data-theme='light'] .logo-container .menu-icon-container .menu-icon:before,
+html[data-theme='light'] .logo-container .menu-icon-container .menu-icon:after{ background:#081950; }
+/* Light theme nav link and full-screen menu text */
+html[data-theme='light'] .main-nav-full ul li a{ color:#081950; }
+html[data-theme='dark']  .main-nav-full ul li a{ color:#ffffff; }
+/* Light theme: deep blue quote text */
+html[data-theme='light'] .content-about .quote-animation{ color:#081950; }
+
+/* Light theme header gradient lighter to show contrast */
+html[data-theme='light'] .logo-container{
+  background:linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, transparent 100%);
+}
+
+/* Theme toggle color follows text color */
+/* keep color handled above */
 body.no-scroll{
 	overflow:hidden
 }
@@ -1056,6 +1161,7 @@ input,button,select,textarea{
 .main-tagline::before,.main-tagline::after{
 	content:' // '
 }
+
 #webgl{
 	position:fixed;
 	z-index:-1;
@@ -1065,7 +1171,23 @@ input,button,select,textarea{
 	width:100vw;
 	height:100vh
 }
-.webgl-bg{
+.webgl-bg{ background-color:#000; }
+/* Show image only during loading as a graceful fallback */
+.webgl-bg.loading{
+	background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../img/img2-bg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+.webgl-bg .content--related{
+	background:#000
+}
+/* Light theme fallback only while loading */
+html[data-theme='light'] body.webgl-bg.loading{
+	background-color:#ffffff;
+	background-image: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('../img/img2-bg.jpg');
+}
+.webgl-bg .content--related{
 	background:#000
 }
 .webgl-bg .content--related{
@@ -1090,6 +1212,31 @@ input,button,select,textarea{
 	color:black;
 	border:2px solid #F8C91C
 }
+
+/* News + Publications styling */
+.content-news .news-list{ list-style:none; padding-left:0; font-size:18px; line-height:1.8; }
+.content-news .news-list li + li{ margin-top:6px; }
+.publications h3{ font-family:"Larsseit","Helvetica Neue",Helvetica,Arial,sans-serif; font-size:28px; font-weight:bold; letter-spacing:-0.5px; margin:20px 0 10px; }
+.pub-list{ list-style:disc; padding-left:20px; font-size:18px; line-height:1.8; }
+/* Ensure only titles and the name are bold in publications */
+.pub-list li{ font-weight:400; }
+.pub-list li b, .pub-list li strong{ font-weight:700; }
+.pub-list li + li{ margin-top:8px; }
+/* Link chips for publication entries */
+.pub-links{ white-space:nowrap; margin-left:6px; font-weight:700; }
+.pub-links a{ display:inline-block; margin-left:6px; color:inherit; text-decoration:none; border-bottom:2px solid currentColor; padding-bottom:1px; }
+.content-works .publications .pub-links a{ display:inline-block !important; }
+.pub-links a:hover{ color:#F8C91C; border-color:#F8C91C; }
+.pub-links a::before{ content:'['; margin-right:2px; }
+.pub-links a::after{ content:']'; margin-left:0px; }
+
+/* Light theme: plain white sections from News onward */
+html[data-theme='light'] .content-news,
+html[data-theme='light'] .content-works{ background:#ffffff; }
+
+/* Contact on dark image: brighter text */
+.content-related, .content-related h1, .content-related .content-contact ul li a{ color:#ffffff; }
+.content-related .content-contact ul li a span{ color:rgba(255,255,255,0.9); }
 
 
 @media screen and (max-width: 40em){
@@ -1142,9 +1289,10 @@ input,button,select,textarea{
 	height:100vh;
 	width:100vw;
 	width:100%;
-	color:white;
-	text-align:center
+    color:white;
+    text-align:center
 }
+html[data-theme='light'] .content-top .content-top-container{ color:#081950; }
 .content-top .content-top-container h1{
 	-webkit-transform:translateX(0px);
 	transform:translateX(0px);
@@ -1193,8 +1341,8 @@ input,button,select,textarea{
 	}
 }
 @media screen and (max-width: 767px){
-	.content-section.content-life{p
-		adding-bottom:0 !important;
+	.content-section.content-life{
+		padding-bottom:0 !important;
 		margin-bottom:0 !important;
 		padding:0px !important
 	}
@@ -1554,16 +1702,20 @@ input,button,select,textarea{
 }
 @media screen and (max-width: 767px){
 	.content-related .content-contact ul li a span{
-		font-size:17px
+			font-size:17px
+		}
 	}
-}
 .content-related .content-contact ul li a:hover b{
-	color:#F8C91C
-}
+		color:#F8C91C
+	}
 .content-related .content-contact ul li a:hover b:before{
-	-webkit-transform:scale3d(1, 1, 1);
-	transform:scale3d(1, 1, 1)
+		-webkit-transform:scale3d(1, 1, 1);
+		transform:scale3d(1, 1, 1)
 }
 .content-related .content-contact ul li a:hover span{
-	color:#F8C91C
+		color:#F8C91C
 }
+/* Contact section – refined, clean styling */
+.content-related .content-contact ul li{ margin-top:14px; }
+.content-related .content-contact ul li a b:before{ height:0.35em; opacity:0.18; }
+.content-related .content-contact ul li a span{ color:rgba(255,255,255,0.9); line-height:1.55; }

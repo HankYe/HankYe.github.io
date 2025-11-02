@@ -42,17 +42,14 @@ $(function() {
 			$('.menu-nav a[href="#works"]').removeClass('active');
 		}
 	});
-	$('.content-articles').scrollex({
-		// Mode: Sets Scrollex to 'middle' mode (= midpoint between top/bottom edges must fall within contact area).
+	// News section
+	$('.content-news').scrollex({
 		mode: 'middle',
-		
-		enter: function() {
-			// Set #foobar's background color to green when we scroll into it.
-			$('.menu-nav a[href="#articles"]').addClass('active');
+		enter: function(){
+			$('.menu-nav a[href="#news"]').addClass('active');
 		},
-		leave: function() {
-			// Reset #foobar's background color when we scroll out of it.
-			$('.menu-nav a[href="#articles"]').removeClass('active');
+		leave: function(){
+			$('.menu-nav a[href="#news"]').removeClass('active');
 		}
 	});
 	$('.content-related').scrollex({
